@@ -28,10 +28,7 @@
           </div>
           <div class="About-Content">
             <p class="about-name">
-              控福（上海）智能科技有限公司是一家工业互联网测试装备企业，主要从产品测试角度为
-              客户提供整车及零部件的测试与开发，并专注于汽车电子模块的整车测试开发。为客户提供汽
-              车及制造领域测试设备、实验室信息化管理系统、设备升级改造、产品测试仿真工具、工业互
-              联网硬件搭建、培训咨询等一系列产品与服务。
+              {{AboutGkf.content}}
             </p>
           </div>
         </div>
@@ -236,13 +233,6 @@
         }
       },
       mounted() {
-
-
-
-
-
-
-
         this.$http.get(this.$conf.env.AboutKF).then(res=>{
           this.AboutGkf = res.data
         }).catch(err=>{

@@ -111,31 +111,30 @@
         <div class="AboutBanner">
           <div class="swiper-containera">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+              <div class="swiper-slide"  v-for="(item,index) in ConpanyOverList" :key="index">
                 <div class="Box">
                   <div class="Img">
-                    <img src="../assets/img/aboutas.png" alt="">
+                    <img :src="item.img" alt="">
                   </div>
                   <div class="Word">
-                    <p>控福·上海</p>
-                    <p class="Content">控福（上海）智能科技有限公司是一家工业互联网测试装备企业，主要从产品测试角度为客户提供整车及零部件的测试与开发，并专注于汽车电子模块的整车测试开发。为客户提供汽车及制造领 域测试设备、实验室信息化管理系统、设备升级改造、产品测试仿真工具、工业互联网硬件搭建、培训咨询等一系列产品与服务。
-                    </p>
+                    <p>{{item.title}}</p>
+                    <p class="Content">{{item.description}}</p>
                   </div>
 
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="Box">
-                  <div class="Img">
-                    <img src="../assets/img/ch.png" alt="">
-                  </div>
-                  <div class="Word">
-                    <p>控福·长春</p>
-                    <p class="Content">2018年成立控福长春分公司，依托于长春汽车产业发展在全国的领先地位，控福持续扩大经营业务范围，不断提高自身技术优势，经过两年的努力，已成功为一汽红旗、一汽大众、长春检测中心提供测试设备及解决方案。</p>
-                  </div>
+<!--              <div class="swiper-slide">-->
+<!--                <div class="Box">-->
+<!--                  <div class="Img">-->
+<!--                    <img src="../assets/img/ch.png" alt="">-->
+<!--                  </div>-->
+<!--                  <div class="Word">-->
+<!--                    <p>控福·长春</p>-->
+<!--                    <p class="Content">2018年成立控福长春分公司，依托于长春汽车产业发展在全国的领先地位，控福持续扩大经营业务范围，不断提高自身技术优势，经过两年的努力，已成功为一汽红旗、一汽大众、长春检测中心提供测试设备及解决方案。</p>-->
+<!--                  </div>-->
 
-                </div>
-              </div>
+<!--                </div>-->
+<!--              </div>-->
             </div>
             <!-- Add Arrows -->
 <!--            <div class="swiper-button-next"></div>-->
@@ -259,6 +258,7 @@
             IndexFirstBanner:[],    //首页第一个轮播图
             IndexSecondBanner:[],   //首页第二个轮播图
             LoginScene:'',           //场景值
+            ConpanyOverList:[],
           }
       },
       methods:{
@@ -367,7 +367,11 @@
           this.GetData()
       },
       mounted() {
-
+        this.$http.get(this.$conf.env.ConpanyOver).then(res=>{
+          this.ConpanyOverList = res.data
+        }).catch(err=>{
+          console.log(err)
+        });
         window.scrollTo(0,0);
       }
 

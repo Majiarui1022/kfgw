@@ -20,6 +20,11 @@
           <ul>
             <li v-for="(item,index) in InternetProList" :key="index"  @click="GoDetal(item.id,4)">
               <img :src="item.web_img" alt="">
+              <div class="pro-detail">
+                <div class="name">{{item.name}}</div>
+                <div class="code">产品编号：{{item.code}}</div>
+                <div class="pro-con">产品介绍：{{item.description}}</div>
+              </div>
             </li>
           </ul>
         </div>
@@ -168,6 +173,7 @@
         .ProList{
           width: 1247px;
           margin: 0 auto;
+          margin-bottom: 38px;
           ul{
             overflow: hidden;
             li{
@@ -177,17 +183,48 @@
               border:1px solid rgba(102,102,102,1);
               margin-bottom: 12px;
               cursor: pointer;
+              padding: 38px 90px 44px 25px;
+              box-sizing: border-box;
+              img{
+                width:160px;
+                height:160px;
+                float: left;
+                margin-right: 20px;
+              }
+              .pro-detail{
+                .name{
+                  font-size:20px;
+                  color:rgba(51,51,51,1);
+                  line-height:32px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                .code{
+                  font-size:16px;
+                  color:rgba(102,102,102,1);
+                  line-height:32px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                .pro-con{
+                  height:60px;
+                  font-size:16px;
+                  color:rgba(51,51,51,1);
+                  line-height:32px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  -webkit-line-clamp: 2;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                }
+              }
               &:nth-child(2n){
                 float: right;
               }
-              img{
-                width: 100%;
-                height: 100%;
-                display: block;
-              }
             }
           }
-          margin-bottom: 38px;
         }
         .GdProduct{
           display: flex;
@@ -220,6 +257,27 @@
             li{
               width: 441px;
               height: 193.6px;
+              padding: 30.4px 72px 35.2px 20px;
+              img{
+                width:128px;
+                height:128px;
+                margin-right: 16px;
+              }
+              .pro-detail{
+                .name{
+                  font-size:16px;
+                  line-height:25px;
+                }
+                .code{
+                  font-size:12px;
+                  line-height:25px;
+                }
+                .pro-con{
+                  height:48px;
+                  font-size:12px;
+                  line-height:25px;
+                }
+              }
             }
           }
         }
@@ -281,9 +339,29 @@
                 justify-content: space-between;
                 li{
                   width:300px;
-                  height:131px;
+                  height:110px;
                   border:1px solid rgba(102,102,102,1);
-                  margin-right: 0;
+                  padding: 13px 19px 17px 13px;
+                  img{
+                    width:80px;
+                    height:80px;
+                  }
+                  .pro-detail{
+                    .name{
+                      font-size:14px;
+                      line-height:16px;
+                    }
+                    .code{
+                      font-size:12px;
+                      line-height:16px;
+                      margin: 6px 0;
+                    }
+                    .pro-con{
+                      height:30px;
+                      font-size:12px;
+                      line-height:16px;
+                    }
+                  }
                   &:nth-child(n+6){
                     display: none;
                   }

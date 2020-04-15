@@ -83,7 +83,7 @@
         loadmap(){
           var _that = this
           var map = new BMap.Map("Map");
-          var point = new BMap.Point(121.611192,31.18537);
+          var point = new BMap.Point(121.610987,31.177183);
           var marker = new BMap.Marker(point);  // 创建标注
           map.addOverlay(marker);              // 将标注添加到地图中
           map.centerAndZoom(point, _that.POM);
@@ -92,7 +92,7 @@
             height: 70,     // 信息窗口高度
             title : "控福智能" , // 信息窗口标题
           }
-          var infoWindow = new BMap.InfoWindow("地址：上海市浦东新区祥科路炬芯研发大厦", opts);  // 创建信息窗口对象
+          var infoWindow = new BMap.InfoWindow("地址：上海市浦东新区盛荣路88弄源创谷盛大天地5号楼-403室", opts);  // 创建信息窗口对象
           marker.addEventListener("click", function(){
             _that.POM = 18
             _that.loadmap()

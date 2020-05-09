@@ -30,9 +30,9 @@
           <div class="CallMe">
             <div class="CallMeLeft">
               <p>联系方式</p>
-              <p>021-68360291</p>
+              <p>021-68360290</p>
               <p>info@kungfunion.com</p>
-              <p>张先生&nbsp;&nbsp;&nbsp;18168094745</p>
+              <p>张先生&nbsp;&nbsp;&nbsp;18168096745</p>
               <p>地址：上海市浦东新区盛荣路88弄源创谷盛大天地5号楼-403室</p>
             </div>
             <div class="CallMeRight">
